@@ -1,4 +1,4 @@
-[leveldb](https://github.com/google/leveldb) for jdk10
+[leveldb](http://leveldb.org/) for jdk10
 
 Very simple bindings for using leveldb with jdk10, derived from [android-leveldb](https://github.com/litl/android-leveldb).
 
