@@ -1,4 +1,10 @@
-leveldb (https://code.google.com/p/leveldb/) for Android
+[leveldb](https://github.com/google/leveldb) for jdk10
 
-Very simple bindings for using Leveldb from android.
-There's an excellent project leveldbjni out there for using leveldb from Java, but it seems a bit too much. It has a bunch of dependencies, including a code generator, which might or might not work on Android. At least it is not trivial to get started.
+Very simple bindings for using leveldb with jdk10, derived from [android-leveldb](https://github.com/litl/android-leveldb).
+
+To build:
+1. edit the <code>Makefile</code> as appropriate
+2. run <code>make</code>
+3. copy the generated <code>leveldbjni.jar</code> to your classpath and <code>libleveldbjni.so</code> to your <code>java.library.path</code>
+
+Also includes <code>leveldb.mk</code>, a script for downloading and building <code>libleveldb.so</code> from google's leveldb [repo](https://github.com/google/leveldb).
