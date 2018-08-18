@@ -1,4 +1,7 @@
 
+LEVELDB_INCLUDE = /usr/local/include
+LEVELDB_LIB = /usr/local/lib64
+
 JAVA_HOME = /opt/jdk
 ARCH = linux
 
@@ -10,9 +13,6 @@ JAVA_SRC = \
   java/com/litl/leveldb/Iteration.java \
   java/com/litl/leveldb/NativeObject.java \
   java/com/litl/leveldb/WriteBatch.java
-
-LEVELDB_INCLUDE = /usr/local/include
-LEVELDB_LIB = /usr/local/lib64
 
 CC = cc
 
