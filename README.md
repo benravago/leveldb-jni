@@ -7,4 +7,4 @@ To build:
 2. run <code>make</code>
 3. copy the generated <code>leveldbjni.jar</code> to your classpath and <code>libleveldbjni.so</code> to your <code>java.library.path</code>
 
-Also includes <code>leveldb.mk</code>, a script for downloading and building <code>libleveldb.so</code> from google's leveldb [repo](https://github.com/google/leveldb).
+Also includes <code>leveldb.mk</code>, a script for downloading and building <code>libleveldb.so</code> from google's [leveldb repo](https://github.com/google/leveldb).
