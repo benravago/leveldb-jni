@@ -7,4 +7,4 @@ To build:
 2. run <code>make</code>
 3. copy the generated <code>leveldbjni.jar</code> to your classpath and <code>libleveldbjni.so</code> to your <code>java.library.path</code>
 
-The jni binding requires a current <code>libleveldb.so</code>, usually available from standard distribution repos (fedora, debian, etc).  However, if you want to build your own libleveldb.so, you could use <code>leveldb.mk</code>,  a script for downloading and building <code>libleveldb.so</code> from google's [leveldb repo](https://github.com/google/leveldb).
+The jni binding requires a current <code>libleveldb.so</code>, usually available from standard distribution repos (fedora, debian, etc).  However, if you want to build your own libleveldb.so, you could use <code>libleveldb.sh</code>,  a script for downloading and building <code>libleveldb.so</code> from google's [leveldb repo](https://github.com/google/leveldb).
