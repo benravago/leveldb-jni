@@ -4,12 +4,6 @@ import java.nio.file.Path;
 
 public class DB extends NativeObject {
 
-    public abstract static class Snapshot extends NativeObject {
-        Snapshot(long ptr) {
-            super(ptr);
-        }
-    }
-
     private final Path mPath;
     private boolean mDestroyOnClose = false;
 
@@ -33,6 +27,17 @@ public class DB extends NativeObject {
         if (mDestroyOnClose) {
             destroy(mPath);
         }
+    }
+
+    public void destroy() {
+        mDestroyOnClose = true;
+        if (getPtr() == 0) {
+            destroy(mPath);
+        }
+    }
+
+    public static void destroy(Path path) {
+        nativeDestroy(path.toAbsolutePath().toString());
     }
 
     public void put(byte[] key, byte[] value) {
@@ -104,6 +109,12 @@ public class DB extends NativeObject {
         };
     }
 
+    public abstract class Snapshot extends NativeObject {
+        Snapshot(long ptr) {
+            super(ptr);
+        }
+    }
+
     public Snapshot getSnapshot() {
         assertOpen("Database is closed");
         ref();
@@ -114,17 +125,6 @@ public class DB extends NativeObject {
                 DB.this.unref();
             }
         };
-    }
-
-    public void destroy() {
-        mDestroyOnClose = true;
-        if (getPtr() == 0) {
-            destroy(mPath);
-        }
-    }
-
-    public static void destroy(Path path) {
-        nativeDestroy(path.toAbsolutePath().toString());
     }
 
     private static native long nativeOpen(String dbpath);

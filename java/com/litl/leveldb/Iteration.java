@@ -2,8 +2,8 @@ package com.litl.leveldb;
 
 public class Iteration extends NativeObject {
 
-    Iteration(long iterPtr) {
-        super(iterPtr);
+    Iteration(long ptr) {
+        super(ptr);
     }
 
     @Override
@@ -68,7 +68,7 @@ public class Iteration extends NativeObject {
 
     private static native void nativePrev(long ptr);
 
-    private static native byte[] nativeKey(long dbPtr);
+    private static native byte[] nativeKey(long ptr);
 
-    private static native byte[] nativeValue(long dbPtr);
+    private static native byte[] nativeValue(long ptr);
 }
